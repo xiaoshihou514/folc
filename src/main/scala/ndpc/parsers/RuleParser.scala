@@ -11,3 +11,5 @@ import Parsley.many
 // parses address of rule into a list of int
 val adr: Parsley[List[Int]] = '(' ~> some(digit).map(_.mkString.toInt) 
                               <::> many(','~>some(digit).map(_.mkString.toInt)) <~ ')'
+
+val doubleNeg: Parsley[DoubleNeg] = 
